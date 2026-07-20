@@ -1,2 +1,396 @@
 <!DOCTYPE html>
-<html><body><h1>Karnataka Blind Football</h1></body></html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ | Karnataka Blind Football</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 10px;
+            background: #1b5e20;
+            color: white;
+            padding: 10px;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0d47a1;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid #1b5e20;
+        }
+        .logo-box {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .tagline-new {
+            font-weight: bold;
+            color: #b9f6ca;
+            margin-top: 5px;
+        }
+        nav.accessibility-nav {
+            background-color: #1b5e20;
+            padding: 14px;
+            text-align: center;
+        }
+        nav.accessibility-nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+        nav.accessibility-nav a:focus, nav.accessibility-nav a:hover {
+            text-decoration: underline;
+            color: #b9f6ca;
+        }
+        main {
+            max-width: 1150px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #0d47a1;
+            border-bottom: 3px solid #1b5e20;
+            padding-bottom: 8px;
+            margin-top: 35px;
+        }
+        .intro-box {
+            background: #e3f2fd;
+            border-left: 5px solid #0d47a1;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        
+        /* ಫಾರ್ಮ್ ವಿನ್ಯಾಸ */
+        .reg-form-container {
+            max-width: 750px;
+            margin: 20px auto;
+            padding: 25px;
+            background: #fbfbfb;
+            border: 1px solid #cfd8dc;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #0d47a1;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .submit-form-btn {
+            background-color: #0d47a1;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .submit-form-btn:hover, .submit-form-btn:focus {
+            background-color: #1b5e20;
+            outline: 3px solid #b9f6ca;
+        }
+
+        /* ವಾಟ್ಸಾಪ್ ಯಶಸ್ಸಿನ ಬಾಕ್ಸ್ ವಿನ್ಯಾಸ */
+        .whatsapp-success-box {
+            display: none;
+            background: #e8f5e9;
+            border: 2px solid #2e7d32;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .whatsapp-btn:focus, .whatsapp-btn:hover {
+            outline: 3px solid #0d47a1;
+            background-color: #128c7e;
+        }
+
+        /* ಟೇಬಲ್ ವಿನ್ಯಾಸ */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            min-width: 900px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: #0d47a1;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* სპಾನ್ಸರ್‌ಶಿಪ್ ಮತ್ತು ಕಾಂಟ್ಯಾಕ್ಟ್ ಬಾಕ್ಸ್ */
+        .sponsor-box {
+            background: #fff3e0;
+            padding: 25px;
+            border-left: 5px solid #ff9800;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+        .contact-link {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        .contact-link:focus, .contact-link:hover {
+            outline: 3px solid #0d47a1;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 50px;
+            background-color: #fff;
+            border-top: 1px solid #e1e1e1;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#players-section" class="skip-link">ಆಟಗಾರರ ವಿವರಗಳಿಗೆ ನೇರ ಹೋಗಿ (Skip to Players)</a>
+    <a href="#membership-section" class="skip-link">ಮೆಂಬರ್‌ಶಿಪ್ ಫಾರ್ಮ್‌ಗೆ ನೇರ ಹೋಗಿ (Skip to Membership)</a>
+    <a href="#sponsor-section" class="skip-link">ಸಂಪರ್ಕ ವಿಭಾಗಕ್ಕೆ ನೇರ ಹೋಗಿ (Skip to Contact)</a>
+
+    <header>
+        <div class="logo-box" role="img" aria-label="ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ಲೋಗೋ">⚽🏆✨</div>
+        <h1>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್</h1>
+        <h1>Karnataka Blind Football</h1>
+        <p>ನ್ಯಾಷನಲ್ ಮತ್ತು ಝೋನಲ್ ಮಟ್ಟದಲ್ಲಿ ಕರ್ನಾಟಕವನ್ನು ಹೆಮ್ಮೆಯಿಂದ ಪ್ರತಿನಿಧಿಸುವ ಕ್ರೀಡಾಪಟುಗಳ ಅಧಿಕೃತ ವೇದಿಕೆ</p>
+        <p class="tagline-new">"ಛಲ, ಸಾಧನೆ ಮತ್ತು ಕ್ರೀಡಾ ಸ್ಫೂರ್ತಿಯ ಸಂಕೇತ"</p>
+    </header>
+
+    <nav class="accessibility-nav" aria-label="ಮುಖ್ಯ ಮೆನು">
+        <a href="#about-section">ತಂಡದ ಪರಿಚಯ</a>
+        <a href="#players-section">ನಮ್ಮ ಆಟಗಾರರು (Players)</a>
+        <a href="#membership-section">ಸದಸ್ಯತ್ವ ನೋಂದಣಿ (Membership)</a>
+        <a href="#sponsor-section">ಸಂಪರ್ಕಿಸಿ (Contact Us)</a>
+    </nav>
+
+    <main>
+        
+        <!-- ತಂಡದ ಪರಿಚಯ -->
+        <section id="about-section">
+            <div class="intro-box">
+                <h2>ತಂಡದ ಪರಿಚಯ (About Our Team)</h2>
+                <p>ನಮ್ಮ ತಂಡವು ರಾಷ್ಟ್ರೀಯ (National) ಮತ್ತು ವಲಯ (Zonal) ಮಟ್ಟದ ಟೂರ್ನಮೆಂಟ್‌ಗಳಲ್ಲಿ भागವಹಿಸಿ ಅನೇಕ ಸಾಧನೆಗಳನ್ನು ಮಾಡಿದೆ. ಕಣ್ಣಿಗೆ ಪಟ್ಟಿ ಕಟ್ಟಿ, ಶಬ್ದ ಮಾಡುವ ವಿಶೇಷ ಫುಟ್‌ಬಾಲ್ ಮೂಲಕ ಮೈದಾನದಲ್ಲಿ ಅದ್ಭುತ ಪ್ರದರ್ಶನ ನೀಡುವ ಮೂಲಕ ಕರ್ನಾಟಕದ ಕೀರ್ತಿಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತಿದ್ದೇವೆ.</p>
+            </div>
+        </section>
+
+        <!-- ಆಟಗಾರರ ಅಧಿಕೃತ ಪಟ್ಟಿ ಟೇಬಲ್ -->
+        <section id="players-section">
+            <h2>ನಮ್ಮ ಹೆಮ್ಮೆಯ ಆಟಗಾರರ ವಿವರಗಳು (Official Players Roster)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ಆಟಗಾರರ ಹೆಸರು (Player Name)</th>
+                            <th>ಸ್ಥಾನ / ಪೊಸಿಷನ್ (Position)</th>
+                            <th>ಕ್ರೀಡಾ ಮಟ್ಟ (Level)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ಸುಮಿತ್ ಮೋಟೇಕರ್ / Sumit Motekar</strong></td>
+                            <td>ಕ್ಯಾಪ್ಟನ್, ಸ್ಟ್ರೈಕರ್ ಮತ್ತು ಮಿಡ್‌ಫೀಲ್ಡರ್ (Captain / Striker / Midfielder)</td>
+                            <td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್ (National, State & Zonal Player)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ಕೇತನ್ ಬೆಳಗಾಂಕರ್ / Ketan Belagaunkar</strong></td>
+                            <td>ಸ್ಟ್ರೈಕರ್ ಮತ್ತು ಮಿಡ್‌ಫೀಲ್ಡರ್ (Striker / Midfielder)</td>
+                            <td>ನ್ಯಾಷನಲ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್ (National & Zonal Player)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ಉದಯಕುಮಾರ್ ನಾರಾಯಣ್ ಕುದ್ರೆಮನಿ / Udaykumar Narayan Kudremani</strong></td>
+                            <td>ಡಿಫೆಂಡರ್ (Defender)</td>
+                            <td>ನ್ಯಾಷನಲ್ ಪ್ಲೇಯರ್ (National Player)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ಸಂತೋಷ್ ನಿಲಾಜ್ಕರ್ / Santosh Nilajkar</strong></td>
+                            <td>ಸ್ಟ್ರೈಕರ್ (Striker)</td>
+                            <td>ನ್ಯಾಷನಲ್ ಪ್ಲೇಯರ್ (National Player)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ಅಕ್ಷಯ್ ಸುನಿಲ್ ಪಾಟೀಲ್ / Akshya Sunil Patil</strong></td>
+                            <td>ಡಿಫೆಂಡರ್ (Defender)</td>
+                            <td>ನ್ಯಾಷನಲ್ ಪ್ಲೇಯರ್ (National Player)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 3px dashed #cfd8dc; margin: 40px 0;">
+
+        <!-- ಹೊಸ ಸದಸ್ಯತ್ವ ಫಾರ್ಮ್ ವಿಭಾಗ -->
+        <section id="membership-section">
+            <h2>ಸದಸ್ಯತ್ವ ಮತ್ತು ಪ್ರೆಸ್ ನೋಂದಣಿ ಫಾರ್ಮ್ (Membership & Press Registration)</h2>
+            <p>ನಮ್ಮ ತಂಡವನ್ನು ಬೆಂಬಲಿಸಲು ಅಥವಾ ಮಾಧ್ಯಮದ ಸದಸ್ಯರಾಗಿ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಲು ಈ ಕೆಳಗಿನ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ:</p>
+            
+            <div class="reg-form-container">
+                <form id="mainRegForm" action="https://formspree.io/f/mqaeewne" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="reg-name">ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು / Full Name *</label>
+                        <input type="text" name="Full_Name" id="reg-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-member-type">ಸದಸ್ಯತ್ವದ ವಿಧ / Membership Type *</label>
+                        <select name="Membership_Type" id="reg-member-type" required>
+                            <option value="">ಆಯ್ಕೆ ಮಾಡಿ / Select</option>
+                            <option value="ಪ್ರೆಸ್ ಸದಸ್ಯರು / Press Member">ಪ್ರೆಸ್ ಸದಸ್ಯರು / Press Member</option>
+                            <option value="ಲೈಫ್ ಸದಸ್ಯರು / Life Member">ಲೈಫ್ ಸದಸ್ಯರು / Life Member</option>
+                            <option value="ಸಾಮಾನ್ಯ ಸದಸ್ಯರು / General Member">ಸಾಮಾನ್ಯ ಸದಸ್ಯರು / General Member</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-contact">ಮೊಬೈಲ್ ಸಂಖ್ಯೆ / Mobile Number *</label>
+                        <input type="tel" name="Mobile_Number" id="reg-contact" required pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-message">ನಿಮ್ಮ ಸಂದೇಶ ಅಥವಾ ಅಭಿಪ್ರಾಯ / Message *</label>
+                        <textarea name="User_Message" id="reg-message" rows="3" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-form-btn">ನೋಂದಣಿ ಸಲ್ಲಿಸಿ (Submit Registration)</button>
+                </form>
+
+                <!-- 🎯 ಸಬ್ಮಿಟ್ ಆದ ತಕ್ಷಣ ಕಾಣಿಸುವ ಮತ್ತು ಕೆಲಸ ಮಾಡುವ ವಾಟ್ಸಾಪ್ ಗ್ರೂಪ್ ಜಾಯಿನ್ ಬಾಕ್ಸ್ -->
+                <div id="whatsappBox" class="whatsapp-success-box" role="region" aria-live="assertive" tabindex="-1">
+                    <h3 style="color: #2e7d32; margin-top: 0;">✅ ನೋಂದಣಿ ಯಶಸ್ವಿಯಾಗಿದೆ! / Submitted Successfully!</h3>
+                    <p>ನಿಮ್ಮ ಎಲ್ಲಾ ಮಾಹಿತಿ ಇಮೇಲ್ ಮೂಲಕ ನಮಗೆ ತಲುಪಿದೆ. ದಯವಿಟ್ಟು ಕೆಳಗಿನ ಬಟನ್ ಒತ್ತಿ ನಮ್ಮ ಅಧಿಕೃತ ವಾಟ್ಸಾಪ್ ಗ್ರೂಪ್ ಅನ್ನು ಇಂದೇ ಜಾಯಿನ್ ಆಗಿ:</p>
+                    <a href="https://chat.whatsapp.com/JH3bApsI0Te8nlSFEk9YqX?s=em&p=a&ilr=0" class="whatsapp-btn" id="wa-link" target="_blank">👉 ವಾಟ್ಸಾಪ್ ಗ್ರೂಪ್ ಜಾಯಿನ್ ಮಾಡಿ (Join WhatsApp Group)</a>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 3px dashed #cfd8dc; margin: 40px 0;">
+
+        <!-- ಸಂಪರ್ಕ ಬಾಕ್ಸ್ -->
+        <section id="sponsor-section">
+            <div class="sponsor-box">
+                <h2>🤝 ⭐ಸ್ಪಾನ್ಸರ್‌ಶಿಪ್ ಮತ್ತು ಬೆಂಬಲಕ್ಕಾಗಿ ಸಂಪರ್ಕಿಸಿ (Sponsorship & Support)</h2>
+                <p>ನಮ್ಮ ತಂಡಕ್ಕೆ ಆರ್ಥಿಕ ಪ್ರೋತ್ಸಾಹ ನೀಡಲು ಅಥವಾ ನಮ್ಮ ಮುಂಬರುವ ನ್ಯಾಷನಲ್ ಟೂರ್ನಮೆಂಟ್‌ಗಳಿಗೆ ಸ್ಪಾನ್ಸರ್ ಮಾಡಲು ಬಯಸುವವರು ನೇರವಾಗಿ ನಮ್ಮನ್ನು ಫೋನ್ ಮೂಲಕ ಸಂಪರ್ಕಿಸಬಹುದು:</p>
+                <p style="font-size: 1.3rem; font-weight: bold; color: #0d47a1; margin: 10px 0;">
+                    📞 ಅಧಿಕೃತ ಫೋನ್ ಸಂಖ್ಯೆ: 8123808928
+                </p>
+                <a href="tel:8123808928" class="contact-link">ನೇರ ಕರೆ ಮಾಡಿ (Call Now)</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.getElementById("mainRegForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let myForm = document.getElementById("mainRegForm");
+            let formData = new FormData(myForm);
+            
+            fetch(myForm.action, {
+                method: "POST",
+                headers: { "Accept": "application/json" },
+                body: formData
+            })
+            .then(function() {
+                // 1. ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಕೇವಲ "Submitted" ಅಲರ್ಟ್ ತೋರಿಸುವುದು
+                alert("Submitted");
+                
+                // 2. ಹೊಸ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ವಾಟ್ಸಾಪ್ ಜಾಯಿನ್ ಲಿಂಕ್ ಓಪನ್ ಮಾಡುವುದು
+                window.open("https://chat.whatsapp.com/JH3bApsI0Te8nlSFEk9YqX?s=em&p=a&ilr=0", "_blank");
+                
+                // 3. ಫಾರ್ಮ್ ರಿಸೆಟ್ ಮಾಡಿ ಯಶಸ್ಸಿನ ಬಾಕ್ಸ್ ತೋರಿಸುವುದು
+                myForm.reset();
+                let waBox = document.getElementById("whatsappBox");
+                waBox.style.display = "block";
+                waBox.focus();
+            })
+            .catch(function() { 
+                alert("Error"); 
+            });
+        });
+    </script>
+
+    <footer>
+        <span>© 2026 ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ಸಂಸ್ಥೆ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</span>
+    </footer>
+
+</body>
+</html>
