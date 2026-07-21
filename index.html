@@ -11,116 +11,50 @@
             --light: #f4f6f9;
             --dark: #212121;
             --white: #ffffff;
+            --whatsapp: #25d366;
         }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #000;
-            color: #fff;
-            padding: 8px;
-            z-index: 100;
-        }
-        .skip-link:focus {
-            top: 0;
-        }
-        header {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #0d3b11;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: var(--white);
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:focus, nav a:hover {
-            text-decoration: underline;
-            outline: 2px solid #fff;
-        }
-        main {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        section {
-            background: var(--white);
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 600px;
-        }
-        label {
-            font-weight: bold;
-        }
-        input, select, textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        button {
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            padding: 12px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        button:hover, button:focus {
-            background-color: #bf360c;
-            outline: 2px solid #000;
-        }
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #000; color: #fff; padding: 8px; z-index: 100; }
+        .skip-link:focus { top: 0; }
+        header { background-color: var(--primary); color: var(--white); padding: 20px; text-align: center; }
+        nav { background-color: #0d3b11; padding: 10px; text-align: center; }
+        nav a { color: var(--white); margin: 0 10px; text-decoration: none; font-weight: bold; }
+        nav a:focus, nav a:hover { text-decoration: underline; outline: 2px solid #fff; }
+        main { padding: 20px; max-width: 1000px; margin: auto; }
+        section { background: var(--white); margin-bottom: 25px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: var(--primary); color: var(--white); }
+        .btn-link { display: inline-block; background-color: var(--secondary); color: var(--white); text-decoration: none; padding: 12px 20px; font-size: 18px; font-weight: bold; border-radius: 5px; margin-top: 10px; }
+        .btn-link:hover, .btn-link:focus { background-color: #bf360c; outline: 3px solid #000; }
+        .btn-wa { background-color: var(--whatsapp); color: #fff; display: inline-block; text-decoration: none; padding: 12px 20px; font-size: 18px; font-weight: bold; border-radius: 5px; margin-top: 10px; }
+        .btn-wa:hover, .btn-wa:focus { background-color: #128c7e; outline: 3px solid #000; }
+        form { display: flex; flex-direction: column; gap: 12px; max-width: 600px; }
+        label { font-weight: bold; }
+        input, select, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        button { background-color: var(--whatsapp); color: var(--white); border: none; padding: 12px; font-size: 18px; font-weight: bold; cursor: pointer; border-radius: 4px; }
+        button:hover, button:focus { background-color: #128c7e; outline: 2px solid #000; }
+        footer { background-color: var(--dark); color: var(--white); text-align: center; padding: 15px; margin-top: 20px; }
     </style>
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            var name = document.getElementById('m-name').value;
+            var type = document.getElementById('m-type').value;
+            var phone = document.getElementById('m-phone').value;
+            var msg = document.getElementById('m-msg').value;
+
+            var fullMessage = "ನಮಸ್ಕಾರ, ನಾನು ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ಸಂಸ್ಥೆಗೆ ಸೇರಲು ಬಯಸುತ್ತೇನೆ.%0A" +
+                              "*ಹೆಸರು:* " + encodeURIComponent(name) + "%0A" +
+                              "*ವಿಭಾಗ:* " + encodeURIComponent(type) + "%0A" +
+                              "*ಮೊಬೈಲ್:* " + encodeURIComponent(phone) + "%0A" +
+                              "*ಸಂದೇಶ:* " + encodeURIComponent(msg);
+
+            var whatsappUrl = "https://wa.me/918123808928?text=" + fullMessage;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
 </head>
 <body>
 
@@ -159,127 +93,58 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>ಸುಮಿತ್ ಮೋಟೇಕರ್ / Sumit Motekar</td>
-                        <td>ಕ್ಯಾಪ್ಟನ್, ಸ್ಟ್ರೈಕರ್ ಮತ್ತು ಮಿಡ್‌ಫೀಲ್ಡರ್</td>
-                        <td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td>
-                    </tr>
-                    <tr>
-                        <td>ಕೇತನ್ ಬೆಳಗಾಂಕರ್ / Ketan Belagaunkar</td>
-                        <td>ಸ್ಟ್ರೈಕರ್ ಮತ್ತು ಮಿಡ್‌ಫೀಲ್ಡರ್</td>
-                        <td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td>
-                    </tr>
-                    <tr>
-                        <td>ಉದಯಕುಮಾರ್ ದುರದುಂಡಿ / Udaykumar Duradundi</td>
-                        <td>ಡಿಫೆಂಡರ್</td>
-                        <td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td>
-                    </tr>
-                    <tr>
-                        <td>ಸಂತೋಷ್ ನಿಲಾಜ್ಕರ್ / Santosh Nilajkar</td>
-                        <td>ಸ್ಟ್ರೈಕರ್</td>
-                        <td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td>
-                    </tr>
-                    <tr>
-                        <td>ಅಕ್ಷಯ್ / Akshay</td>
-                        <td>ಡಿಫೆಂಡರ್</td>
-                        <td>ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td>
-                    </tr>
-                    <tr>
-                        <td>ಸುನಿಲ್ ಪಾಟೀಲ್ / Sunil Patil</td>
-                        <td>ಆಟಗಾರ (Player)</td>
-                        <td>ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td>
-                    </tr>
-                    <tr>
-                        <td>ನಾರಾಯಣ್ ಕುದ್ರೆಮನಿ / Narayan Kudremani</td>
-                        <td>ಆಟಗಾರ (Player)</td>
-                        <td>ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td>
-                    </tr>
-                    <tr>
-                        <td>ಓಂಕಾರ್ / Omkar</td>
-                        <td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td>
-                        <td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td>
-                    </tr>
-                    <tr>
-                        <td>ಪ್ರೀತಮ್ / Preetam</td>
-                        <td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td>
-                        <td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td>
-                    </tr>
-                    <tr>
-                        <td>ಶಿವಾನಂದ್ ಚೌಗುಲ / Shivanand Chougla</td>
-                        <td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td>
-                        <td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td>
-                    </tr>
+                    <tr><td>ಸುಮಿತ್ ಮೋಟೇಕರ್ / Sumit Motekar</td><td>ಕ್ಯಾಪ್ಟನ್, ಸ್ಟ್ರೈಕರ್ ಮತ್ತು ಮಿಡ್‌ಫೀಲ್ಡರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ಕೇತನ್ ಬೆಳಗಾಂಕರ್ / Ketan Belagaunkar</td><td>ಸ್ಟ್ರೈಕರ್ ಮತ್ತು ಮಿಡ್‌ಫೀಲ್ಡರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ಉದಯಕುಮಾರ್ ದುರದುಂಡಿ / Udaykumar Duradundi</td><td>ಡಿಫೆಂಡರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ಸಂತೋಷ್ ನಿಲಾಜ್ಕರ್ / Santosh Nilajkar</td><td>ಸ್ಟ್ರೈಕರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ಅಕ್ಷಯ್ / Akshay</td><td>ಡಿಫೆಂಡರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ಸುನಿಲ್ ಪಾಟೀಲ್ / Sunil Patil</td><td>ಆಟಗಾರ (Player)</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ನಾರಾಯಣ್ ಕುದ್ರೆಮನಿ / Narayan Kudremani</td><td>ಆಟಗಾರ (Player)</td><td>ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ಓಂಕಾರ್ / Omkar</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
+                    <tr><td>ಪ್ರೀತಮ್ / Preetam</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
+                    <tr><td>ಶಿವಾನಂದ್ ಚೌಗುಲ / Shivanand Chougla</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
                 </tbody>
             </table>
         </section>
 
+        <!-- 1. ಆಟಗಾರರ ಗೂಗಲ್ ಫಾರ್ಮ್ -->
         <section id="player-reg">
-            <h2>⚽ ಆಟಗಾರರ ನೋಂದಣಿ ಫಾರ್ಮ್ (Player Registration Form)</h2>
-            <p>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ತಂಡಕ್ಕೆ ಆಟಗಾರರಾಗಿ ಸೇರಲು ಈ ಕೆಳಗಿನ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ:</p>
-            <form action="https://formspree.io/f/xvgrogyl" method="POST">
-                <input type="hidden" name="Form_Type" value="Player Registration">
-                
-                <label for="p-name">ಆಟಗಾರನ ಪೂರ್ಣ ಹೆಸರು *</label>
-                <input type="text" id="p-name" name="Player_Name" required>
-
-                <label for="p-age">ವಯಸ್ಸು *</label>
-                <input type="number" id="p-age" name="Player_Age" required>
-
-                <label for="p-category">ದೃಷ್ಟಿಹೀನತೆಯ ವಿಭಾಗ (Category) *</label>
-                <select id="p-category" name="Visual_Category" required>
-                    <option value="">ಆಯ್ಕೆ ಮಾಡಿ</option>
-                    <option value="B1 (Totally Blind)">B1 (ಸಂಪೂರ್ಣ ಅಂಧತ್ವ)</option>
-                    <option value="B2/B3 (Partial/Sighted Goalkeeper)">B2/B3 / ಸೈಟೆಡ್ ಗೋಲ್‌ಕೀಪರ್</option>
-                </select>
-
-                <label for="p-position">ಆಡುವ ಪೊಸಿಷನ್ *</label>
-                <select id="p-position" name="Preferred_Position" required>
-                    <option value="">ಆಯ್ಕೆ ಮಾಡಿ</option>
-                    <option value="Striker">ಸ್ಟ್ರೈಕರ್ (Striker)</option>
-                    <option value="Midfielder">ಮಿಡ್‌ಫೀಲ್ಡರ್ (Midfielder)</option>
-                    <option value="Defender">ಡಿಫೆಂಡರ್ (Defender)</option>
-                    <option value="Goalkeeper">ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</option>
-                </select>
-
-                <label for="p-phone">ಮೊಬೈಲ್ / ವಾಟ್ಸಾಪ್ ಸಂಖ್ಯೆ *</label>
-                <input type="tel" id="p-phone" name="Player_Phone" required>
-
-                <button type="submit">ಆಟಗಾರನಾಗಿ ನೋಂದಾಯಿಸಿ</button>
-            </form>
+            <h2>⚽ ಆಟಗಾರರ ನೋಂದಣಿ (Player Registration)</h2>
+            <p>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ತಂಡಕ್ಕೆ ಆಟಗಾರರಾಗಿ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಲು ಕೆಳಗಿನ ಬಟನ್ ಒತ್ತಿ ಗೂಗಲ್ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ:</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7RPimaz9XFYT3h-Jrutz4D6AqymwMMn_VkUqqZMTyGjOuKQ/viewform" target="_blank" class="btn-link">ಆಟಗಾರರ ನೋಂದಣಿ ಫಾರ್ಮ್ ತೆರೆಯಿರಿ</a>
         </section>
 
+        <!-- 2. ಸದಸ್ಯತ್ವ ಫಾರ್ಮ್ (ನೇರವಾಗಿ ವಾಟ್ಸಾಪ್‌ಗೆ ತಲುಪುತ್ತದೆ) -->
         <section id="member-reg">
-            <h2>👥 ಸಾಮಾನ್ಯ ಸದಸ್ಯತ್ವ ಮತ್ತು ಸ್ವಯಂಸೇವಕರ ನೋಂದಣಿ (General Member & Volunteer Registration)</h2>
-            <p>ತಂಡಕ್ಕೆ ಬೆಂಬಲ ನೀಡಲು, ಸ್ವಯಂಸೇವಕರಾಗಲು ಅಥವಾ ಸದಸ್ಯರಾಗಲು ಈ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ:</p>
-            <form action="https://formspree.io/f/xvgrogyl" method="POST">
-                <input type="hidden" name="Form_Type" value="General Member / Volunteer">
-
+            <h2>👥 ಸಾಮಾನ್ಯ ಸದಸ್ಯತ್ವ ಮತ್ತು ಸ್ವಯಂಸೇವಕರ ನೋಂದಣಿ</h2>
+            <p>ತಂಡಕ್ಕೆ ಬೆಂಬಲ ನೀಡಲು ಅಥವಾ ಸದಸ್ಯರಾಗಲು ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ ಸಬ್ಮಿಟ್ ಒತ್ತಿ. ನಿಮ್ಮ ವಿವರಗಳು ನೇರವಾಗಿ ನಮ್ಮ ವಾಟ್ಸಾಪ್‌ಗೆ ತಲುಪುತ್ತವೆ:</p>
+            
+            <form onsubmit="sendToWhatsApp(event)">
                 <label for="m-name">ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು *</label>
-                <input type="text" id="m-name" name="Member_Name" required>
+                <input type="text" id="m-name" required placeholder="ನಿಮ್ಮ ಹೆಸರು ಬರೆಯಿರಿ">
 
                 <label for="m-type">ಸದಸ್ಯತ್ವದ ವಿಧ / ಬೆಂಬಲಿಸುವ ವಿಧಾನ *</label>
-                <select id="m-type" name="Membership_Type" required>
-                    <option value="">ಆಯ್ಕೆ ಮಾಡಿ</option>
-                    <option value="General Member">ಸಾಮಾನ್ಯ ಸದಸ್ಯರು (General Member)</option>
-                    <option value="Volunteer">ಸ್ವಯಂಸೇವಕರು (Volunteer / Guide)</option>
-                    <option value="Sponsor / Donor">ಸ್ಪಾನ್ಸರ್ / ದಾನಿಗಳು (Sponsor)</option>
-                    <option value="Media / Press">ಮಾಧ್ಯಮ / ಪ್ರೆಸ್ (Media)</option>
+                <select id="m-type" required>
+                    <option value="ಸಾಮಾನ್ಯ ಸದಸ್ಯರು (General Member)">ಸಾಮಾನ್ಯ ಸದಸ್ಯರು (General Member)</option>
+                    <option value="ಸ್ವಯಂಸೇವಕರು (Volunteer / Guide)">ಸ್ವಯಂಸೇವಕರು (Volunteer / Guide)</option>
+                    <option value="ಸ್ಪಾನ್ಸರ್ / ದಾನಿಗಳು (Sponsor)">ಸ್ಪಾನ್ಸರ್ / ದಾನಿಗಳು (Sponsor)</option>
+                    <option value="ಮಾಧ್ಯಮ / ಪ್ರೆಸ್ (Media)">ಮಾಧ್ಯಮ / ಪ್ರೆಸ್ (Media)</option>
                 </select>
 
-                <label for="m-phone">ಮೊಬೈಲ್ ಸಂಖ್ಯೆ *</label>
-                <input type="tel" id="m-phone" name="Member_Phone" required>
+                <label for="m-phone">ಮೊಬೈಲ್ / ವಾಟ್ಸಾಪ್ ಸಂಖ್ಯೆ *</label>
+                <input type="tel" id="m-phone" required placeholder="ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆ ಬರೆಯಿರಿ">
 
                 <label for="m-msg">ನಿಮ್ಮ ಸಂದೇಶ ಅಥವಾ ಅಭಿಪ್ರಾಯ</label>
-                <textarea id="m-msg" name="Member_Message" rows="4"></textarea>
+                <textarea id="m-msg" rows="3" placeholder="ನಿಮ್ಮ ಸಂದೇಶ ಬರೆಯಿರಿ"></textarea>
 
-                <button type="submit">ಸದಸ್ಯರಾಗಿ ನೋಂದಾಯಿಸಿ</button>
+                <button type="submit">📲 ವಾಟ್ಸಾಪ್ ಮೂಲಕ ನೋಂದಾಯಿಸಿ</button>
             </form>
         </section>
 
         <section id="contact">
             <h2>🤝 ಸ್ಪಾನ್ಸರ್‌ಶಿಪ್ ಮತ್ತು ಸಂಪರ್ಕಕ್ಕಾಗಿ (Contact & Support)</h2>
             <p>ಅಧಿಕೃತ ಸಂಪರ್ಕ ಸಂಖ್ಯೆ: <strong>8123808928</strong></p>
-            <p><a href="tel:8123808928">ನೇರ ಕರೆ ಮಾಡಿ (Call Now)</a></p>
+            <p><a href="tel:8123808928" class="btn-link">ನೇರ ಕರೆ ಮಾಡಿ (Call Now)</a></p>
         </section>
     </main>
 
