@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ಸಂಸ್ಥೆ (Official Website)</title>
+    <title>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ (Official Website)</title>
     <style>
         :root {
             --primary: #1b5e20;
@@ -35,17 +35,19 @@
         input, select, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
         button { background-color: var(--whatsapp); color: var(--white); border: none; padding: 12px; font-size: 18px; font-weight: bold; cursor: pointer; border-radius: 4px; }
         button:hover, button:focus { background-color: #128c7e; outline: 2px solid #000; }
+        .sponsor-list { list-style-type: square; padding-left: 20px; }
+        .sponsor-list li { margin-bottom: 10px; font-size: 18px; }
         footer { background-color: var(--dark); color: var(--white); text-align: center; padding: 15px; margin-top: 20px; }
     </style>
     <script>
-        function sendToWhatsApp(event) {
+        function sendToPersonalWhatsApp(event) {
             event.preventDefault();
             var name = document.getElementById('m-name').value;
             var type = document.getElementById('m-type').value;
             var phone = document.getElementById('m-phone').value;
             var msg = document.getElementById('m-msg').value;
 
-            var fullMessage = "ನಮಸ್ಕಾರ, ನಾನು ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ಸಂಸ್ಥೆಗೆ ಸೇರಲು ಬಯಸುತ್ತೇನೆ.%0A" +
+            var fullMessage = "ನಮಸ್ಕಾರ, ನಾನು ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್‌ಗೆ ಸೇರಲು ಬಯಸುತ್ತೇನೆ.%0A" +
                               "*ಹೆಸರು:* " + encodeURIComponent(name) + "%0A" +
                               "*ವಿಭಾಗ:* " + encodeURIComponent(type) + "%0A" +
                               "*ಮೊಬೈಲ್:* " + encodeURIComponent(phone) + "%0A" +
@@ -72,6 +74,7 @@
         <a href="#players">ನಮ್ಮ ಆಟಗಾರರು</a>
         <a href="#player-reg">ಆಟಗಾರರ ನೋಂದಣಿ</a>
         <a href="#member-reg">ಸದಸ್ಯತ್ವ ನೋಂದಣಿ</a>
+        <a href="#sponsors">ಸ್ಪಾನ್ಸರ್‌ಗಳು</a>
         <a href="#contact">ಸಂಪರ್ಕಿಸಿ</a>
     </nav>
 
@@ -103,23 +106,30 @@
                     <tr><td>ಓಂಕಾರ್ / Omkar</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
                     <tr><td>ಪ್ರೀತಮ್ / Preetam</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
                     <tr><td>ಶಿವಾನಂದ್ ಚೌಗುಲ / Shivanand Chougla</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
+                    <!-- ======================================================= -->
+                    <!-- SUMIT SECRET CODE: ADD PLAYER HERE (ಹೊಸ ಆಟಗಾರರ ಸಾಲು ಇಲ್ಲಿದೆ) -->
+                    <!-- ======================================================= -->
                 </tbody>
             </table>
         </section>
 
-        <!-- 1. ಆಟಗಾರರ ಗೂಗಲ್ ಫಾರ್ಮ್ -->
         <section id="player-reg">
-            <h2>⚽ ಆಟಗಾರರ ನೋಂದಣಿ (Player Registration)</h2>
-            <p>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ತಂಡಕ್ಕೆ ಆಟಗಾರರಾಗಿ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಲು ಕೆಳಗಿನ ಬಟನ್ ಒತ್ತಿ ಗೂಗಲ್ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ:</p>
+            <h2>⚽ ಆಟಗಾರರ ನೋಂದಣಿ ಫಾರ್ಮ್ (Player Registration Form)</h2>
+            <p>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ತಂಡಕ್ಕೆ ಆಟಗಾರರಾಗಿ ಸೇರಲು ಕೆಳಗಿನ ಬಟನ್ ಒತ್ತಿ ಗೂಗಲ್ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ:</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7RPimaz9XFYT3h-Jrutz4D6AqymwMMn_VkUqqZMTyGjOuKQ/viewform" target="_blank" class="btn-link">ಆಟಗಾರರ ನೋಂದಣಿ ಫಾರ್ಮ್ ತೆರೆಯಿರಿ</a>
+            
+            <div style="margin-top: 20px; background: #e8f5e9; padding: 15px; border-radius: 5px;">
+                <p style="margin: 0 0 10px 0; font-weight: bold; color: var(--primary);">ಆಟಗಾರರ ಗಮನಕ್ಕೆ:</p>
+                <p style="margin: 0 0 10px 0;">ಗೂಗಲ್ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿದ ನಂತರ, ಅಧಿಕೃತ ಆಟಗಾರರ ವಾಟ್ಸಾಪ್ ಗ್ರೂಪ್‌ಗೆ ಸೇರಲು ಕೆಳಗಿನ ಬಟನ್ ಒತ್ತಿ:</p>
+                <a href="https://chat.whatsapp.com/JH3bApsI0Te8nlSFEk9YqX?s=em&p=a&ilr=0" target="_blank" class="btn-wa">👉 ಆಟಗಾರರ ವಾಟ್ಸಾಪ್ ಗ್ರೂಪ್ ಜಾಯಿನ್ ಮಾಡಿ (Players Group Only)</a>
+            </div>
         </section>
 
-        <!-- 2. ಸದಸ್ಯತ್ವ ಫಾರ್ಮ್ (ನೇರವಾಗಿ ವಾಟ್ಸಾಪ್‌ಗೆ ತಲುಪುತ್ತದೆ) -->
         <section id="member-reg">
-            <h2>👥 ಸಾಮಾನ್ಯ ಸದಸ್ಯತ್ವ ಮತ್ತು ಸ್ವಯಂಸೇವಕರ ನೋಂದಣಿ</h2>
-            <p>ತಂಡಕ್ಕೆ ಬೆಂಬಲ ನೀಡಲು ಅಥವಾ ಸದಸ್ಯರಾಗಲು ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ ಸಬ್ಮಿಟ್ ಒತ್ತಿ. ನಿಮ್ಮ ವಿವರಗಳು ನೇರವಾಗಿ ನಮ್ಮ ವಾಟ್ಸಾಪ್‌ಗೆ ತಲುಪುತ್ತವೆ:</p>
+            <h2>👥 ಸಾಮಾನ್ಯ ಸದಸ್ಯತ್ವ ಮತ್ತು ಸ್ವಯಂಸೇವಕರ ನೋಂದಣಿ (General Member & Volunteer Registration)</h2>
+            <p>ತಂಡಕ್ಕೆ ಬೆಂಬಲ ನೀಡಲು, ಸ್ವಯಂಸೇವಕರಾಗಲು ಅಥವಾ ಸದಸ್ಯರಾಗಲು ಈ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ. ನಿಮ್ಮ ವಿವರಗಳು ನೇರವಾಗಿ ನಮ್ಮ ಅಧಿಕೃತ ವೈಯಕ್ತಿಕ ವಾಟ್ಸಾಪ್ ಸಂಖ್ಯೆಗೆ ತಲುಪುತ್ತವೆ:</p>
             
-            <form onsubmit="sendToWhatsApp(event)">
+            <form onsubmit="sendToPersonalWhatsApp(event)">
                 <label for="m-name">ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು *</label>
                 <input type="text" id="m-name" required placeholder="ನಿಮ್ಮ ಹೆಸರು ಬರೆಯಿರಿ">
 
@@ -137,19 +147,36 @@
                 <label for="m-msg">ನಿಮ್ಮ ಸಂದೇಶ ಅಥವಾ ಅಭಿಪ್ರಾಯ</label>
                 <textarea id="m-msg" rows="3" placeholder="ನಿಮ್ಮ ಸಂದೇಶ ಬರೆಯಿರಿ"></textarea>
 
-                <button type="submit">📲 ವಾಟ್ಸಾಪ್ ಮೂಲಕ ನೋಂದಾಯಿಸಿ</button>
+                <button type="submit">📲 ನೇರವಾಗಿ ವಾಟ್ಸಾಪ್‌ಗೆ ನೋಂದಾಯಿಸಿ</button>
             </form>
         </section>
 
+        <section id="sponsors">
+            <h2>🤝 ಅಧಿಕೃತ ಸ್ಪಾನ್ಸರ್‌ಗಳು ಮತ್ತು ಬೆಂಬಲಿತ ಸಂಸ್ಥೆಗಳು (Official Sponsors & Partners)</h2>
+            <p>ನಮ್ಮ ತಂಡದ ಬೆಳವಣಿಗೆಗೆ ಮತ್ತು ಕ್ರೀಡಾಪಟುಗಳ ಸಾಧನೆಗೆ ಬೆಂಬಲ ನೀಡುತ್ತಿರುವ ಗೌರವಾನ್ವಿತ ಸಂಸ್ಥೆಗಳು:</p>
+            <ul class="sponsor-list">
+                <li>
+                    <a href="#" onclick="alert('ಈ ಲಿಂಕ್ ಶೀಘ್ರದಲ್ಲೇ ಸಕ್ರಿಯಗೊಳ್ಳಲಿದೆ / Link will be active soon'); return false;" style="color: var(--primary); font-weight: bold; text-decoration: underline;">
+                        ಸಮನ್ವಯ ಬ್ಲೈಂಡ್ ಫೌಂಡೇಶನ್ (Samanvaya Blind Foundation) - 2025-2026
+                    </a>
+                </li>
+                <li><strong>ಜೈ ಭಾರತ್ ಫೌಂಡೇಶನ್ (Jai Bharat Foundation)</strong></li>
+                <li><strong>ರೋಟರಿ ಕ್ಲಬ್ ಬೆಳಗಾವಿ (Rotary Club Belagavi)</strong></li>
+                <!-- ======================================================= -->
+                <!-- SUMIT SECRET CODE: ADD SPONSOR HERE (ಹೊಸ ಸ್ಪಾನ್ಸರ್ ಸಾಲು ಇಲ್ಲಿದೆ) -->
+                <!-- ======================================================= -->
+            </ul>
+        </section>
+
         <section id="contact">
-            <h2>🤝 ಸ್ಪಾನ್ಸರ್‌ಶಿಪ್ ಮತ್ತು ಸಂಪರ್ಕಕ್ಕಾಗಿ (Contact & Support)</h2>
+            <h2>🤝 ಸಂಪರ್ಕಕ್ಕಾಗಿ (Contact & Support)</h2>
             <p>ಅಧಿಕೃತ ಸಂಪರ್ಕ ಸಂಖ್ಯೆ: <strong>8123808928</strong></p>
             <p><a href="tel:8123808928" class="btn-link">ನೇರ ಕರೆ ಮಾಡಿ (Call Now)</a></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ಸಂಸ್ಥೆ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</p>
+        <p>&copy; 2026 ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</p>
     </footer>
 
 </body>
