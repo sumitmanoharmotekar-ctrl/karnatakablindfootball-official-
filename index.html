@@ -58,6 +58,26 @@
         }
     </script>
 </head>
+<!-- ವಂದೇ ಮಾತರಂ ಆಡಿಯೋ ಫೈಲ್ -->
+    <audio id="vandeMataramAudio" src="vande_mataram.mp3" loop></audio>
+
+    <script>
+        // ಸ್ಕ್ರೀನ್ ಮೇಲೆ ಯಾವುದೇ ಸ್ಪರ್ಶ/ಕೀಬೋರ್ಡ್ ಪ್ರೆಸ್ ಆದಾಗ ಆಡಿಯೋ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ
+        function playDefaultAudio() {
+            var audio = document.getElementById('vandeMataramAudio');
+            if (audio) {
+                audio.play().catch(function(error) {
+                    console.log("Autoplay check:", error);
+                });
+            }
+            // ಒಮ್ಮೆ ಪ್ಲೇ ಆದ ನಂತರ ಈ ಲಿಸನರ್ ತೆರವುಗೊಳ್ಳುತ್ತದೆ
+            document.removeEventListener('click', playDefaultAudio);
+            document.removeEventListener('keydown', playDefaultAudio);
+        }
+
+        document.addEventListener('click', playDefaultAudio);
+        document.addEventListener('keydown', playDefaultAudio);
+    </script>
 <body>
 
     <a class="skip-link" href="#players">ಆಟಗಾರರ ವಿವರಗಳಿಗೆ ನೇರ ಹೋಗಿ</a>
@@ -86,7 +106,7 @@
 
         <section id="players">
             <h2>ನಮ್ಮ ಹೆಮ್ಮೆಯ ಆಟಗಾರರ ವಿವರಗಳು (Official Players Roster)</h2>
-            <table>
+<table>
                 <caption>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ತಂಡದ ಅಧಿಕೃತ ಆಟಗಾರರ ಪಟ್ಟಿ</caption>
                 <thead>
                     <tr>
@@ -101,8 +121,8 @@
                     <tr><td>ಉದಯಕುಮಾರ್ ದುರದುಂಡಿ / Udaykumar Duradundi</td><td>ಡಿಫೆಂಡರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
                     <tr><td>ಸಂತೋಷ್ ನಿಲಾಜ್ಕರ್ / Santosh Nilajkar</td><td>ಸ್ಟ್ರೈಕರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
                     <tr><td>ಅಕ್ಷಯ್ / Akshay</td><td>ಡಿಫೆಂಡರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
-                    <tr><td>ಸುನಿಲ್ ಪಾಟೀಲ್ / Sunil Patil</td><td>ಆಟಗಾರ (Player)</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
-                    <tr><td>ನಾರಾಯಣ್ ಕುದ್ರೆಮನಿ / Narayan Kudremani</td><td>ಆಟಗಾರ (Player)</td><td>ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ಸುನಿಲ್ ಪಾಟೀಲ್ / Sunil Patil</td><td>ಮಿಡ್‌ಫೀಲ್ಡರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
+                    <tr><td>ನಾರಾಯಣ್ ಕುದ್ರೆಮನಿ / Narayan Kudremani</td><td>ಮಿಡ್‌ಫೀಲ್ಡರ್</td><td>ನ್ಯಾಷನಲ್, ಸ್ಟೇಟ್ ಮತ್ತು ಝೋನಲ್ ಪ್ಲೇಯರ್</td></tr>
                     <tr><td>ಓಂಕಾರ್ / Omkar</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
                     <tr><td>ಪ್ರೀತಮ್ / Preetam</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
                     <tr><td>ಶಿವಾನಂದ್ ಚೌಗುಲ / Shivanand Chougla</td><td>ಗೋಲ್‌ಕೀಪರ್ (Goalkeeper)</td><td>ಝೋನಲ್ ಪ್ಲೇಯರ್ (Zonal Player)</td></tr>
@@ -112,7 +132,6 @@
                 </tbody>
             </table>
         </section>
-
         <section id="player-reg">
             <h2>⚽ ಆಟಗಾರರ ನೋಂದಣಿ ಫಾರ್ಮ್ (Player Registration Form)</h2>
             <p>ಕರ್ನಾಟಕ ಬ್ಲೈಂಡ್ ಫುಟ್‌ಬಾಲ್ ತಂಡಕ್ಕೆ ಆಟಗಾರರಾಗಿ ಸೇರಲು ಕೆಳಗಿನ ಬಟನ್ ಒತ್ತಿ ಗೂಗಲ್ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ:</p>
